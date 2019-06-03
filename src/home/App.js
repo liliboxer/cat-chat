@@ -6,7 +6,6 @@ class App extends Component {
         const dom = this.renderDOM();
         const header = new Header();
         dom.prepend(header.render());
-        console.log(dom);
 
         return dom;
     }
