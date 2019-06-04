@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Questrial&display=swap');
+
 header {
     display: flex;
-    margin: 0 auto;
+    margin: 0 10px;;
     justify-content: space-between;
     align-items: center;
 }
@@ -8,9 +10,9 @@ header {
 .profile {
     display: flex;
     align-items: center;
-    border: 1px solid red;
-    width: 25%;
+    width: 20%;
     justify-content: space-evenly;
+    font-family: 'Questrial', sans-serif;
 }
 
 .profile img {
