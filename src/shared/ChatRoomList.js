@@ -8,7 +8,6 @@ class ChatRoomList extends Component {
         const onRemove = this.props.onRemove;
 
         chatRooms.forEach(chatRoomParam => {
-            console.log(chatRoomParam);
             const chatRoomItem = new ChatRoomItem({ chatRoom: chatRoomParam, onRemove });
             list.appendChild(chatRoomItem.render());
         });
