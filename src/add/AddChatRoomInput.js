@@ -22,8 +22,6 @@ class AddChatRoomInput extends Component {
             newChatRoomInput.focus();
             document.activeElement.blur();
 
-            console.log(newChatRoom);
-
         });
 
         return form;

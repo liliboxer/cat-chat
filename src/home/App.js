@@ -30,7 +30,16 @@ class App extends Component {
 
         dom.appendChild(addChatRoomInput.render());
 
-        const chatRoomList = new ChatRoomList({ chatRooms: mockChatRoomsData });
+        const chatRoomList = new ChatRoomList({ 
+            chatRooms: mockChatRoomsData,
+            onRemove: (chatRoomToRemove) => {
+                const index = chatRooms.indexOf(chatRoomToRemove);
+                chatRooms.splice(index, 1);
+                api.saveChatRooms(chatRooms);
+                chatRoomList.update({ chatRooms });
+            }
+        });
+
         dom.appendChild(chatRoomList.render());
 
         return dom;
