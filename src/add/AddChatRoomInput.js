@@ -1,4 +1,5 @@
 import Component from '../Component.js';
+import { auth, roomsRef } from '../services/firebase.js';
 
 class AddChatRoomInput extends Component {
     render() {
@@ -15,6 +16,13 @@ class AddChatRoomInput extends Component {
             const newChatRoom = {
                 roomName: formData.get('name')
             };
+
+            const roomRef = roomsRef.push();
+            roomRef.set({
+                key: roomRef.key,
+                owner: auth.currentUser.uid,
+                name: newChatRoom.roomName
+            });
 
             onAdd(newChatRoom);
 

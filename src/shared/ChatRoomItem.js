@@ -15,11 +15,10 @@ class ChatRoomItem extends Component {
     }
 
     renderTemplate() {
-        const chatRoom = this.props.chatRoom;
         
         return /*html*/`
             <div>
-                <li>${chatRoom.roomName} <span><button class="remove-button">X</button></span></li>
+                <li><a href=""></a> <span><button class="remove-button">X</button></span></li>
             </div>
         `;
     }
