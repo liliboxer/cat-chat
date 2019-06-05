@@ -1,4 +1,4 @@
-import htmlToDOM from '../test/html-to-equal.js';
+import htmlToDOM from '../src/utils/html-to-DOM.js';
 
 class Component {
     constructor(props) {
