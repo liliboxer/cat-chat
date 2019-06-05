@@ -10,8 +10,6 @@ class ChatRoomItem extends Component {
         const roomRef = roomsRef.child(chatRoom.key);
 
         removeButton.addEventListener('click', () => {
-
-            // if currently logged in user === owner of the chatroom
             if(auth.currentUser.uid === chatRoom.owner) {
                 roomRef.remove();
             }
