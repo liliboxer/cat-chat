@@ -9,8 +9,6 @@ class App extends Component {
         const header = new Header();
         dom.prepend(header.render());
 
-        
-
         const chatRoomList = new ChatRoomList({ chatRooms: mockChatRoomsData });
         dom.appendChild(chatRoomList.render());
 
