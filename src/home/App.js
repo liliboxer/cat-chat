@@ -13,8 +13,6 @@ class App extends Component {
 
         const addChatRoomInput = new AddChatRoomInput();
 
-        const chatRooms = this.props.chatRooms;
-
         roomsRef
             .on('value', snapshot => {
                 const value = snapshot.val();
