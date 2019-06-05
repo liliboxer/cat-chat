@@ -3,6 +3,7 @@ import Header from '../shared/Header.js';
 import ChatRoomList from '../shared/ChatRoomList.js';
 import mockChatRoomsData from '../services/mock-chats.js';
 import AddChatRoomInput from '../add/AddChatRoomInput.js';
+import api from '../services/chatroom-api.js';
 
 class App extends Component {
     render() {
@@ -10,7 +11,23 @@ class App extends Component {
         const header = new Header();
         dom.prepend(header.render());
 
-        const addChatRoomInput = new AddChatRoomInput();
+        let chatRooms;
+        const chatRoomsInLocalStorage = api.getChatRooms();
+
+        if(chatRoomsInLocalStorage) {
+            chatRooms = chatRoomsInLocalStorage;
+        } else {
+            chatRooms = mockChatRoomsData;
+        }
+
+        const addChatRoomInput = new AddChatRoomInput({
+            onAdd: newChatRoom => {
+                chatRooms.unshift(newChatRoom);
+                api.saveChatRooms(chatRooms);
+                chatRoomList.update({ chatRooms });
+            }
+        });
+
         dom.appendChild(addChatRoomInput.render());
 
         const chatRoomList = new ChatRoomList({ chatRooms: mockChatRoomsData });
