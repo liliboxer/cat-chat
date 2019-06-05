@@ -4,7 +4,6 @@ import { auth, roomsRef } from '../services/firebase.js';
 class AddChatRoomInput extends Component {
     render() {
         const form = this.renderDOM();
-        const onAdd = this.props.onAdd;
 
         const newChatRoomInput = form.querySelector('input[name=name]');
 
@@ -23,8 +22,6 @@ class AddChatRoomInput extends Component {
                 owner: auth.currentUser.uid,
                 name: newChatRoom.roomName
             });
-
-            onAdd(newChatRoom);
 
             form.reset();
             newChatRoomInput.focus();

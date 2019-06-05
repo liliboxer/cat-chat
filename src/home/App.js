@@ -19,19 +19,12 @@ class App extends Component {
             .on('value', snapshot => {
                 const value = snapshot.val();
                 const chatRooms = value ? Object.values(value) : [];
-                chatRoomList.update({ chatRooms })
+                chatRoomList.update({ chatRooms });
             });
 
         dom.appendChild(addChatRoomInput.render());
 
-        const chatRoomList = new ChatRoomList({ 
-            chatRooms: [],
-            onRemove: (chatRoomToRemove) => {
-                const index = chatRooms.indexOf(chatRoomToRemove);
-                chatRooms.splice(index, 1);
-                chatRoomList.update({ chatRooms });
-            }
-        });
+        const chatRoomList = new ChatRoomList({ chatRooms: [] });
 
         dom.appendChild(chatRoomList.render());
 
