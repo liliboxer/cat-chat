@@ -1,4 +1,5 @@
 import Component from '../Component.js';
+import { auth } from '../services/firebase.js';
 
 class MessageInput extends Component {
     render() {
@@ -12,13 +13,13 @@ class MessageInput extends Component {
             event.preventDefault();
     
             const messages = messagesRef.push();
-    
+            
             messages.set({
-                messages:
-                owner:
-    
-            })
-            console.log('hi');
+                owner: auth.currentUser.uid,
+                
+            });
+         
+
         });
         
         return form;

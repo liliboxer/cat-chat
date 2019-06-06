@@ -22,9 +22,7 @@ class ChatRoomApp extends Component {
                 header.update({ title: value.name });
             });
         
-    
-        
-        const messageInput = new MessageInput();
+        const messageInput = new MessageInput({ roomRef });
         main.appendChild(messageInput.render());
 
         const messageList = new MessageList();
