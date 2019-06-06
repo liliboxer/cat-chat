@@ -1,12 +1,10 @@
 import '../utils/check-auth.js';
+import ChatRoomApp from './ChatRoomApp.js';
 import { auth } from '../services/firebase.js';
-import App from './App.js';
-
 
 const root = document.getElementById('app');
 
 auth.onAuthStateChanged(() => {
-    const app = new App();
+    const app = new ChatRoomApp();
     root.appendChild(app.render());
 });
-

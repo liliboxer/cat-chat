@@ -1,0 +1,28 @@
+form {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.add-chat-room button {
+    border: none;
+    padding: 10px;
+    font-size: 50px;
+    margin-bottom: 8px;
+}
+
+button:focus {outline:0;}
+
+input {
+    border: 2px solid black;
+    height: 30px;
+    margin: 10px;
+    width: 300px;
+
+}
+
+input:focus, textarea:focus, select:focus{
+    outline: none;
+}

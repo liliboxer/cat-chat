@@ -1,0 +1,23 @@
+ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+li {
+    border: 2px solid black;
+    margin: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    width: 400px;
+}
+
+li button {
+    border: none;
+    padding: 10px;
+    font-size: 15px;
+}

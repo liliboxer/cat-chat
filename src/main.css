@@ -2,4 +2,9 @@
 
 h1 {
     font-family: 'Abril Fatface', cursive;
+    font-size: 75px;
+}
+
+main {
+    display: flex;
 }
