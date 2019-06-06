@@ -2,8 +2,9 @@ import Component from '../Component.js';
 
 class MessageItem extends Component {
     renderTemplate() {
+        const message = this.props.message;
         return /*html*/`
-            <li></li>
+            <li>${message.message}</li>
         `;
 
     }

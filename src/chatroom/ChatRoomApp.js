@@ -19,15 +19,16 @@ class ChatRoomApp extends Component {
         roomRef 
             .on('value', snapshot => {
                 const value = snapshot.val();
+                const messages = value.messages ? Object.values(value.messages) : [];
                 header.update({ title: value.name });
+                messageList.update({ messages: messages });
             });
         
         const messageInput = new MessageInput({ roomRef });
         main.appendChild(messageInput.render());
 
-        const messageList = new MessageList();
-        messageInput.render()
-            .prepend(messageList.render());
+        const messageList = new MessageList({ messages: [] });
+        main.appendChild(messageList.render());
 
         return dom;
     }
