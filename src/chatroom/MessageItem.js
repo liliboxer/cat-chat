@@ -3,7 +3,7 @@ import Component from '../Component.js';
 class MessageItem extends Component {
     renderTemplate() {
         return /*html*/`
-            <li></li>
+            <li>LIST</li>
         `;
 
     }
