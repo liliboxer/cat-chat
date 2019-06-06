@@ -21,7 +21,6 @@ class ChatRoomApp extends Component {
                 const value = snapshot.val();
                 header.update({ title: value.name });
             });
-
         
         const messageInput = new MessageInput();
         main.appendChild(messageInput.render());
