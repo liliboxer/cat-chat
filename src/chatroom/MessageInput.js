@@ -39,7 +39,9 @@ class MessageInput extends Component {
         return /*html*/`
             <form class="message-input">
                 <input name="message">
-                <button>Send</button>
+                <button> 
+                    <img class="airplane" src="../../assets/send.png">
+                </button>
             </form>
         `;
 

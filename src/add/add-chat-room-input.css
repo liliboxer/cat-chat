@@ -6,6 +6,8 @@ form {
     text-align: center;
 }
 
+button:focus {outline:0;}
+
 .add-chat-room button {
     border: none;
     padding: 10px;
@@ -13,15 +15,13 @@ form {
     margin-bottom: 8px;
 }
 
-button:focus {outline:0;}
-
 input {
     border: 2px solid black;
     height: 30px;
     margin: 10px;
     width: 300px;
     padding: 12px;
-
+    
 }
 
 input:focus, textarea:focus, select:focus{

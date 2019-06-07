@@ -13,7 +13,7 @@ class ChatRoomItem extends Component {
             if(auth.currentUser.uid === chatRoom.owner) {
                 roomRef.remove();
             } else {
-                alert(`THIS AIN'T YO CHAT TO DELETE`);
+                alert(`THIS AIN'T YO CHAT TO DELETE!`);
             }
         });
 

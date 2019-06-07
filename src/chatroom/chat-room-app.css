@@ -2,32 +2,50 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-family: Helvetica, sans-serif
 }
 
 input {
-    width: 650px;
+    width: 500px;
     padding: 12px;
     margin: 8px 0;
   }
 
 .message button {
     border: none;
+    background: none;
     padding: 10px;
     font-size: 50px;
     margin-bottom: 8px;
 }
 
+button {
+    background: none;
+    border: none;
+}
 .message-input {
     position: fixed;
     bottom: 0;
-    margin-bottom: 150px;
+    margin-bottom: 145px;
 }
 
 .message-list {
     height: 40vh;
     overflow: auto;
     list-style: none;
-    border: 1px solid black;
-    width: 75%;
+    width: 50%;
+    padding: 20px;
 }
 
+.user {
+    font-weight: bold;
+}
+
+img {
+    width: 40px;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+}
