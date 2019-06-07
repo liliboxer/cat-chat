@@ -33,7 +33,7 @@ button {
     height: 40vh;
     overflow: auto;
     list-style: none;
-    width: 50%;
+    width: 42%;
     padding: 20px;
 }
 
@@ -59,4 +59,12 @@ li {
     display: flex;
     flex-direction: column;
     margin: 10px;
+}
+
+a {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+    margin-bottom: 100px;
 }

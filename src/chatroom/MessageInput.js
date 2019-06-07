@@ -42,11 +42,9 @@ class MessageInput extends Component {
                 <button> 
                     <img class="airplane" src="../../assets/send.png">
                 </button>
-            </form>
+            </form> 
         `;
-
     }
 }
 
 export default MessageInput;
-

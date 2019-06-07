@@ -48,7 +48,8 @@ class ChatRoomApp extends Component {
     renderTemplate() {
         return /*html*/`
             <div>
-                <main></main>
+                <main> <a href="./"><button class="home-button">Return to Chatrooms</button></a></main>
+               
             </div>
         `;
 
