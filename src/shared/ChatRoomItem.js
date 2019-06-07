@@ -24,7 +24,7 @@ class ChatRoomItem extends Component {
         const chatRoom = this.props.chatRoom;
         return /*html*/`
             <div>
-                <li><a href="./chatroom.html?key=${chatRoom.key}">${chatRoom.name}</a> <span><button class="remove-button">X</button></span></li>
+                <li class="room-name"><a href="./chatroom.html?key=${chatRoom.key}">${chatRoom.name}</a> <span><button class="remove-button">X</button></span></li>
             </div>
         `;
     }
