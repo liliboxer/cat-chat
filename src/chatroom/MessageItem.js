@@ -5,9 +5,11 @@ class MessageItem extends Component {
         const message = this.props.message;
         return /*html*/`
             <li>
-                <span class="user">${message.name}: </span>
-                <span class="message">${message.message}</span>
-                <br class="date">${message.date}</br>
+                <div class="user-message">
+                    <span class="user">${message.name}: </span>
+                    <span class="message">${message.message}</span>
+                </div>
+                <span class="date">${message.date}</span>
             </li>
         `;
 
