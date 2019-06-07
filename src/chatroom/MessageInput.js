@@ -10,8 +10,6 @@ class MessageInput extends Component {
         const messagesRef = messagesByRoomRef.child(key);
 
         const input = form.querySelector('input');
-
-        const avatar = auth.currentUser.photoURL || './assets/icon.png';
         
         form.addEventListener('submit', event => {
             event.preventDefault();
@@ -21,8 +19,6 @@ class MessageInput extends Component {
             messages.set({
                 owner: auth.currentUser.uid,
                 message: input.value,
-                // name: auth.currentUser.displayName,
-                // photo: avatar,
                 date: Date()
             });
 

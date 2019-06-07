@@ -14,7 +14,6 @@ class AuthApp extends Component {
             callbacks: {
                 signInSuccessWithAuthResult: (res) => {
                     const userRef = usersRef.child(res.user.uid);
-                    console.log(userRef);
                     userRef.set({
                         uid: res.user.uid,
                         displayName: res.user.displayName,
