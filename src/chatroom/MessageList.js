@@ -1,5 +1,6 @@
 import Component from '../Component.js';
 import MessageItem from './MessageItem.js';
+import { usersRef } from '../services/firebase.js';
 
 class MessageList extends Component {
     render() {
@@ -12,14 +13,21 @@ class MessageList extends Component {
         }
 
         messages.forEach(message => {
-            const messageItem = new MessageItem({ message });
+            const messageItem = new MessageItem({ message, user: {} });
             dom.appendChild(messageItem.render());
-        });
 
+            usersRef
+                .child(message.owner)
+                .on('value', snapshot => {
+                    const value = snapshot.val();
+                    messageItem.update({ user: value });
+                });
+
+        });
+        
         setTimeout(() => {
             dom.scrollTop = dom.scrollHeight;
         });
-
 
         return dom;
     }

@@ -19,7 +19,7 @@ class AddChatRoomInput extends Component {
             const roomRef = roomsRef.push();
             roomRef.set({
                 key: roomRef.key,
-                owner: auth.currentUser.uid,
+                uid: auth.currentUser.uid,
                 name: newChatRoom.roomName
             });
 
@@ -31,7 +31,6 @@ class AddChatRoomInput extends Component {
 
         return form;
     }
-
 
     renderTemplate() {
         return /*html*/`

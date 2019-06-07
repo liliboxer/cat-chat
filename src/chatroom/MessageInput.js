@@ -21,8 +21,8 @@ class MessageInput extends Component {
             messages.set({
                 owner: auth.currentUser.uid,
                 message: input.value,
-                name: auth.currentUser.displayName,
-                photo: avatar,
+                // name: auth.currentUser.displayName,
+                // photo: avatar,
                 date: Date()
             });
 

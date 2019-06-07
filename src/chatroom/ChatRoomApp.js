@@ -14,6 +14,7 @@ class ChatRoomApp extends Component {
         main.prepend(header.render());
 
         const searchParams = QUERY.parse(window.location.search.slice(1));
+
         const roomMessagesRef = messagesByRoomRef.child(searchParams.key);
 
         const roomRef = roomsRef.child(searchParams.key);
@@ -29,7 +30,6 @@ class ChatRoomApp extends Component {
             .on('value', snapshot => {
                 const value = snapshot.val();
                 header.update({ title: value.name });
-
             });
         
         const messageInput = new MessageInput({ 
