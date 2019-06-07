@@ -1,13 +1,13 @@
 import Component from '../Component.js';
-import { auth } from '../services/firebase.js';
+import { auth, messagesByRoomRef } from '../services/firebase.js';
 
 class MessageInput extends Component {
     render() {
         const form = this.renderDOM();
 
-        const roomRef = this.props.roomRef;
-
-        const messagesRef = roomRef.child('messages');
+        const key = this.props.key;
+        
+        const messagesRef = messagesByRoomRef.child(key);
 
         const input = form.querySelector('input');
 
