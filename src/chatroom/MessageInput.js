@@ -12,12 +12,10 @@ class MessageInput extends Component {
         const input = form.querySelector('input');
 
         const avatar = auth.currentUser.photoURL || './assets/icon.png';
-
-        const date = new Date();
         
         form.addEventListener('submit', event => {
             event.preventDefault();
-    
+            
             const messages = messagesRef.push();
             
             messages.set({
@@ -25,12 +23,12 @@ class MessageInput extends Component {
                 message: input.value,
                 name: auth.currentUser.displayName,
                 photo: avatar,
-                date: date
+                date: Date()
             });
 
             form.reset();
             input.focus();
-            document.activeElement.blur();
+            form.blur();
         });
 
         
