@@ -10,6 +10,10 @@ class MessageInput extends Component {
         const messagesRef = roomRef.child('messages');
 
         const input = form.querySelector('input');
+
+        const avatar = auth.currentUser.photoURL || './assets/icon.png';
+
+        const date = new Date();
         
         form.addEventListener('submit', event => {
             event.preventDefault();
@@ -18,17 +22,24 @@ class MessageInput extends Component {
             
             messages.set({
                 owner: auth.currentUser.uid,
-                message: input.value           
+                message: input.value,
+                name: auth.currentUser.displayName,
+                photo: avatar,
+                date: date
             });
 
+            form.reset();
+            input.focus();
+            document.activeElement.blur();
         });
+
         
         return form;
     }
 
     renderTemplate() {
         return /*html*/`
-            <form>
+            <form class="message-input">
                 <input name="message">
                 <button>Send</button>
             </form>
@@ -38,3 +49,4 @@ class MessageInput extends Component {
 }
 
 export default MessageInput;
+

@@ -21,7 +21,7 @@ class MessageList extends Component {
 
     renderTemplate() {
         return /*html*/`
-            <ul></ul>
+            <ul class="message-list"></ul>
         `;
 
     }
