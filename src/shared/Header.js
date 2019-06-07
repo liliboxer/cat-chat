@@ -12,6 +12,7 @@ class Header extends Component {
             profile.update({ user });
         });
 
+
         return dom;
     }
 

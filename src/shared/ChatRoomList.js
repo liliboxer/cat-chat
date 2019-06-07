@@ -6,11 +6,10 @@ class ChatRoomList extends Component {
         const list = this.renderDOM();
         const chatRooms = this.props.chatRooms;
 
-        chatRooms.forEach(chatRoomParam => {
-            const chatRoomItem = new ChatRoomItem({ chatRoom: chatRoomParam });
+        chatRooms.forEach(chatRoom => {
+            const chatRoomItem = new ChatRoomItem({ chatRoom: chatRoom });
             list.appendChild(chatRoomItem.render());
         });
-
 
         return list;
     }

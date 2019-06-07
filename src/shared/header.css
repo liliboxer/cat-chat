@@ -5,6 +5,7 @@ header {
     margin: 0 10px;;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
 }
 
 .profile {
@@ -17,4 +18,5 @@ header {
 
 .profile img {
     width: 50px;
+    border-radius: 100%;
 }

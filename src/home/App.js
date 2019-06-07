@@ -8,10 +8,11 @@ import { roomsRef } from '../services/firebase.js';
 class App extends Component {
     render() {
         const dom = this.renderDOM();
-        const header = new Header();
+        const header = new Header({ title: 'Chat Rooms!' });
         dom.prepend(header.render());
 
         const addChatRoomInput = new AddChatRoomInput();
+        dom.appendChild(addChatRoomInput.render());
 
         roomsRef
             .on('value', snapshot => {
@@ -20,7 +21,6 @@ class App extends Component {
                 chatRoomList.update({ chatRooms });
             });
 
-        dom.appendChild(addChatRoomInput.render());
 
         const chatRoomList = new ChatRoomList({ chatRooms: [] });
 
