@@ -1,7 +1,7 @@
 import Component from '../Component.js';
 import Header from '../shared/Header.js';
 import MessageInput from './MessageInput.js';
-import { messagesByRoomRef } from '../services/firebase.js';
+import { roomsRef, messagesByRoomRef } from '../services/firebase.js';
 import QUERY from '../../test/QUERY.js';
 import MessageList from '../chatroom/MessageList.js';
 
@@ -14,18 +14,26 @@ class ChatRoomApp extends Component {
         main.prepend(header.render());
 
         const searchParams = QUERY.parse(window.location.search.slice(1));
-        const roomRef = messagesByRoomRef.child(searchParams.key);
+        const roomMessagesRef = messagesByRoomRef.child(searchParams.key);
 
-        roomRef 
+        const roomRef = roomsRef.child(searchParams.key);
+
+        roomMessagesRef 
             .on('value', snapshot => {
                 const value = snapshot.val();
                 const messages = value ? Object.values(value) : [];
-                header.update({ title: value.name });
                 messageList.update({ messages: messages });
+            });
+            
+        roomRef
+            .on('value', snapshot => {
+                const value = snapshot.val();
+                header.update({ title: value.name });
+
             });
         
         const messageInput = new MessageInput({ 
-            roomRef,
+            roomMessagesRef,
             key: searchParams.key      
         });
 

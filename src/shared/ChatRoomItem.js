@@ -12,6 +12,8 @@ class ChatRoomItem extends Component {
         removeButton.addEventListener('click', () => {
             if(auth.currentUser.uid === chatRoom.owner) {
                 roomRef.remove();
+            } else {
+                alert(`THIS AIN'T YO CHAT TO DELETE`);
             }
         });
 
