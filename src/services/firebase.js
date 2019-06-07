@@ -15,4 +15,8 @@ export const auth = firebase.auth();
 export const db = firebase.database();
 export const roomsRef = db.ref('rooms');
 
+
+export const messagesByRoomRef = db.ref('messagesByRoom');
+
+
 window.db = db;

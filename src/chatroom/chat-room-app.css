@@ -1,19 +1,70 @@
 main {
     display: flex;
     flex-direction: column;
-    border: 1px solid black;
-
+    align-items: center;
+    font-family: Helvetica, sans-serif
 }
 
+input {
+    width: 500px;
+    padding: 12px;
+    margin: 8px 0;
+  }
+
+.message button {
+    border: none;
+    background: none;
+    padding: 10px;
+    font-size: 50px;
+    margin-bottom: 8px;
+}
+
+button {
+    background: none;
+    border: none;
+}
 .message-input {
     position: fixed;
     bottom: 0;
-    border: 1px solid red;
-    margin-bottom: 10px;
+    margin-bottom: 145px;
 }
 
 .message-list {
     height: 40vh;
     overflow: auto;
     list-style: none;
+    width: 42%;
+    padding: 20px;
+}
+
+.user {
+    font-weight: bold;
+}
+
+.date {
+    font-size: 12px;
+    color: rgb(176, 176, 176)
+}
+
+img {
+    width: 40px;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+}
+
+li {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+a {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+    margin-bottom: 100px;
 }

@@ -8,3 +8,16 @@ h1 {
 main {
     display: flex;
 }
+
+.room-name {
+    font-family: 'Abril Fatface', cursive;
+}
+
+a, a:visited, a:focus, a:active {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: rgb(176, 176, 176);
+}
